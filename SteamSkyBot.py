@@ -29,15 +29,14 @@ avatar_full_url = player_summary_response["response"]["players"][0]["avatarfull"
 recent_games_response = steamAPI.call(
     'IPlayerService.GetRecentlyPlayedGames', steamid=steam_account_key, count=0)
 
-#  this emoji is giving me issues for some reason
-#  game_controller_emoji = "\U0001F3AE"
-
-
+game_controller_emoji = "🎮"
 hashtag = "#DrBotwise"
-post_header = f"Steam 2-week recap\n{hashtag}\n\n"
+post_header = f"Steam 2-week recap {hashtag}\n\n"
 
-post_text = post_header + "I'm " + player_name + " and I'm playing " + \
-    str(len(recent_games_response["response"]["games"])) + " games!\n\n"
+# post_text = post_header + "I'm " + player_name + " and I'm playing " + \
+#     str(len(recent_games_response["response"]["games"])) + " games!\n\n"
+post_text = f"{post_header}Here is my recent game activiy in Steam {
+    game_controller_emoji}\n\n"
 post_text += "(Playtime in minutes)"
 
 game_images_urls = []
@@ -59,4 +58,5 @@ game_pngs.append(getPNGfromImgUrl(avatar_full_url))
 
 # BlueSky login and post
 BEC = BskyEasyClient()
+print(post_text)
 BEC.postWithImages(text=post_text, images=game_pngs, tags=[hashtag])

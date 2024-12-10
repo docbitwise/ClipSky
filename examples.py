@@ -30,7 +30,11 @@ try:
 except AttributeError:
     print("Not via Starter Pack")
 
-# post = client.send_post("Test post again via Python SDK")
+emoji = "🎮"
+unicode_emoji = ord(emoji)
+post_text = f"This is the emoji {emoji} and this is the unicode {unicode_emoji} to share on bsky"
+print(post_text)
+post = client.send_post(post_text)
 
 ###
 # # Formatting integers
