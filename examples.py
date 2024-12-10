@@ -30,3 +30,18 @@ except AttributeError:
     print("Not via Starter Pack")
 
 # post = client.send_post("Test post again via Python SDK")
+
+###
+# # Formatting integers
+# number = 1234
+# formatted_number = "{:d}".format(number)
+# print(formatted_number)  # Output: 1234
+
+# # Formatting with commas as thousands separators
+# formatted_number = "{:,}".format(number)
+# print(formatted_number)  # Output: 1,234
+
+# # Formatting floats with two decimal places
+# float_number = 1234.56789
+# formatted_float = "{:.2f}".format(float_number)
+# print(formatted_float)  # Output: 1234.57
