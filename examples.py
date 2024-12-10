@@ -18,14 +18,15 @@ client.login(username, password)
 author_feed = client.get_author_feed(actor=username, limit=5)
 for post in author_feed.feed:
     print(post["post"]["record"]["text"])
-    
-    
+
+
 # get profile
 profile_response = client.get_profile(actor=username)
 # get number of followers
 print("followers:", profile_response.followers_count)
 try:
-    print("How many via Starter Pack:", profile_response.joined_via_starter_pack.joined_all_time_count)
+    print("How many via Starter Pack:",
+          profile_response.joined_via_starter_pack.joined_all_time_count)
 except AttributeError:
     print("Not via Starter Pack")
 
