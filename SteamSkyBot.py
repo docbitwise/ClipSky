@@ -58,5 +58,5 @@ game_pngs.append(getPNGfromImgUrl(avatar_full_url))
 
 # BlueSky login and post
 BEC = BskyEasyClient()
-print(post_text)
-BEC.postWithImages(text=post_text, images=game_pngs, tags=[hashtag])
+# print(post_text)
+# BEC.postWithImages(text=post_text, images=game_pngs, tags=[hashtag])

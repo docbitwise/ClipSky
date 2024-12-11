@@ -15,7 +15,8 @@ class BskyEasyClient(Client):
 
         Args:
             text (str): The text of the post to send.
-            image (bytes): The image to send.
+            image (bytes): The images to send.
+            tags (List[str]): The tags to find and convert to rtf.tags.
 
         Returns:
             None
