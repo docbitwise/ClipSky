@@ -1,4 +1,3 @@
-from atproto import Client
 from steam import webapi
 import os
 
@@ -24,6 +23,7 @@ player_summary_response = steamAPI.call(
     'ISteamUser.GetPlayerSummaries', steamids=steam_account_key)
 
 player_name = player_summary_response["response"]["players"][0]["personaname"]
+print("player_name:", player_name)
 avatar_full_url = player_summary_response["response"]["players"][0]["avatarfull"]
 
 recent_games_response = steamAPI.call(

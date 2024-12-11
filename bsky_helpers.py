@@ -5,7 +5,7 @@ import os
 
 
 class BskyEasyClient(Client):
-    def __init__(self, username: str = os.environ['BSKY_USERNAME'], password: str = os.environ['BSKY_PASSWORD']):
+    def __init__(self, username: str = os.getenv("BSKY_USERNAME"), password: str = os.getenv('BSKY_PASSWORD')):
         super().__init__()
         self.login(username, password)
 
